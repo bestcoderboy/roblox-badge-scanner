@@ -11,12 +11,10 @@ badges_array = badges_data["data"]
 badge_ids = [badge['id'] for badge in badges_array]
 badge_id_string = ','.join(map(str, badge_ids))
 badges_img_api_url = "https://thumbnails.roblox.com/v1/badges/icons?badgeIds=" + badge_id_string + "&size=150x150&format=Png&isCircular=true"
-print(badges_img_api_url)
 
 badges_img_request = roblox_request_session.get(url=badges_img_api_url)
 badges_img_data = badges_img_request.json()
 badges_img_array = badges_img_data["data"]
-print(badges_img_array)
 
 badge_table = """{| class=\"wikitable\"
 |+
